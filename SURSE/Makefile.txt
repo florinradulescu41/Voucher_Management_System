@@ -1,0 +1,14 @@
+JAVAC=javac
+sources = $(wildcard *.java)
+classes = $(sources:.java=.class)
+
+build: $(classes)
+
+run: Test.java
+	java Test
+
+clean:
+	del *.class
+
+%.class : %.java
+	$(JAVAC) $<
